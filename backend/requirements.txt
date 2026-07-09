@@ -1,0 +1,16 @@
+fastapi[all]
+SQLAlchemy
+psycopg2-binary
+alembic
+pydantic
+faker
+python-dotenv
+google-generativeai
+uvicorn
+python-dateutil
+reportlab
+
+xhtml2pdf
+Jinja2
+
+PyPDF2

@@ -1,0 +1,33 @@
+# Env files containing secret keys
+.env
+backend/.env
+frontend/.env
+*.env
+.env.local
+
+# Databases & local logs
+backend/*.db
+backend/*.sqlite3
+backend/rentcollections.db
+*.log
+debug_*.txt
+
+# Python Virtual Environments
+backend/venv/
+backend/env/
+backend/.*venv/
+__pycache__/
+*.pyc
+
+# IDEs & System Files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Flutter and Dart build artifacts
+frontend/build/
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/agentic_ui.iml
