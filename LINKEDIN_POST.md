@@ -1,20 +1,17 @@
-🚀 Multi-agent architectures are shifting how we build SaaS. But how do we scale them without hitting token limits, slowing latency, or losing control of security?
+🚀 Property Management SaaS has just been automated from A to Z. 
 
-For the **Agentic Architect Sprint**, I built **PropFlow AI**—an autonomous property management & CRM platform that automates rent collection, lease operations, and financial auditing.
+For the **Agentic Architect Sprint**, I built **PropFlow AI**—an autonomous property management & CRM platform powered by **Gemini 3.5**, **Antigravity 2.0 IDE**, and the **Antigravity CLI**. 
 
-We engineered this platform using the new **Google Antigravity 2.0 IDE**, **Antigravity CLI**, and **Gemini 3.5**:
+Here is how PropFlow AI transforms property management:
+🔹 **Orchestration Core (Gemini 3.5):** A context-aware router dynamically delegates tasks to specialized subagents (Finance, Compliance, Vision, Comms) while enforcing database-level RBAC guardrails.
+🔹 **Dynamic Subagents:** Parallel child agents automate bank statement reconciliation, OCR contractor invoice extraction, and tenant KYC ID verification.
+🔹 **Agentic UI (A2UI):** When the AI router detects a setup intent, the Flutter frontend dynamically replaces the text chat with a multi-step inline form wizard—removing context switching.
+🔹 **Developer Velocity (Antigravity 2.0 Suite):** Scaffolded endpoints with the CLI and visually debugged complex multi-agent execution paths inside the Antigravity 2.0 IDE.
 
-🔹 **Unified Agent Core & Router:** An orchestrator running on Gemini 3.5 that delegates complex natural language inputs into structured plans for specialized subagents (Operations, Vision, Finance, Communications, Compliance).
-🔹 **Shared Agent Harness & RBAC:** Enforces Role-Based Access Control (RBAC) at the database level. Subagents only receive the exact context they need to complete their tasks, protecting token windows and preventing security leaks.
-🔹 **Dynamic Subagent Execution:** Short-lived child agents handle OCR invoice parsing, automate bank statement CSV reconciliation, and verify tenant compliance documents in parallel.
-🔹 **Agentic UI (A2UI):** The agent controls the frontend! Instead of back-and-forth chat text, when the router identifies a property creation intent, the Flutter UI dynamically injects a functional wizard directly into the AI overlay.
+All source code is sanitized and live on GitHub:
+👉 https://github.com/mrmohammadalamin/propflow
 
-With the **Antigravity 2.0 Developer Suite**, we were able to run database migrations, trace prompt routing timelines, and run test suites directly using the CLI and visual IDE debugger, slashing development cycles and boosting velocity.
+Watch the full walkthrough on YouTube:
+🎥 https://youtu.be/FckvjU6hSz8
 
-Check out the full technical architectural blueprint and codebase in my GitHub repository:
-👉 [Link to Repository]
-
-Watch the video walkthrough to see the multi-agent orchestration and dynamic UI injection in action:
-🎥 [Link to Video]
-
-#AIAgents #Gemini #Flutter #FastAPI #AgenticUI #Antigravity #SoftwareArchitecture #PropertyManagement #SaaS #AIUX
+#AIAgents #Gemini #Flutter #FastAPI #SaaS #Antigravity #SoftwareArchitecture #PropertyManagement #SaaS #AIUX
