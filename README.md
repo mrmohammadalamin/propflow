@@ -11,13 +11,29 @@ This solution is aligned with the following Sprint requirements:
 
 ---
 
-## 📸 Media & Interface Showcases
-> [!NOTE]
-> *Insert your video recording link and platform screenshots in the placeholders below before submitting your report to the judges.*
+## 🎥 Media & Interface Showcases
 
-*   **Project Demonstration Video:** [Watch the Video Walkthrough](https://link-to-your-video.com)
-*   **Core UI Dashboard:** 
-    ![Dashboard Overview](report-1.png?v=2)
+### 📺 Project Demonstration Video
+*If your browser does not support the inline video below, you can download or watch the file directly here: [Propflow Demo Video](screenshots/propflow%20demo.mp4)*
+
+<video src="screenshots/propflow%20demo.mp4" width="100%" height="auto" controls></video>
+
+### 💻 Interface Screenshots
+
+<table>
+  <tr>
+    <td><b>1. Dashboard Home Overview</b><br/><img src="screenshots/pro1.png" width="100%" alt="Dashboard Home"/></td>
+    <td><b>2. Financial Analytics Detail</b><br/><img src="screenshots/2.png" width="100%" alt="Dashboard Detail"/></td>
+  </tr>
+  <tr>
+    <td><b>3. A2UI Inline Form Wizard</b><br/><img src="screenshots/add%20property.png" width="100%" alt="A2UI Add Property Wizard"/></td>
+    <td><b>4. Double-Entry Payouts List</b><br/><img src="screenshots/payout.png" width="100%" alt="Ledger & Landlord Payouts"/></td>
+  </tr>
+  <tr>
+    <td><b>5. Multi-Modal ID Verification</b><br/><img src="screenshots/Screenshot%202026-07-09%20045032.png" width="100%" alt="ID Verification"/></td>
+    <td><b>6. Bank Statement Reconciliation</b><br/><img src="screenshots/Screenshot%202026-07-09%20045154.png" width="100%" alt="Reconciliation Report"/></td>
+  </tr>
+</table>
 
 ---
 
