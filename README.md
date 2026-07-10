@@ -14,9 +14,12 @@ This solution is aligned with the following Sprint requirements:
 ## 🎥 Media & Interface Showcases
 
 ### 📺 Project Demonstration Video
-*If your browser does not support the inline video below, you can download or watch the file directly here: [Propflow Demo Video](screenshots/propflow%20demo.mp4)*
+*👉 Click the player preview image below to play/download the full demonstration video (~975MB):*
 
-<video src="screenshots/propflow%20demo.mp4" width="100%" height="auto" controls></video>
+[![Watch the video](screenshots/pro1.png)](https://github.com/mrmohammadalamin/propflow/raw/main/screenshots/propflow%20demo.mp4)
+
+*Or try the inline player below:*
+<video src="https://github.com/mrmohammadalamin/propflow/raw/main/screenshots/propflow%20demo.mp4" width="100%" height="auto" controls poster="screenshots/pro1.png"></video>
 
 ### 💻 Interface Screenshots
 
