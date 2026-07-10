@@ -243,6 +243,198 @@ mindmap
 
 ---
 
+### 5. Database Schema Architecture (ERD)
+This Entity Relationship Diagram (ERD) outlines the database models, showing primary keys, foreign key relationships, and data types that support the Triple Ledger system.
+
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#022c22',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#10b981',
+    'lineColor': '#34d399',
+    'secondaryColor': '#0f172a',
+    'tertiaryColor': '#1e293b'
+  }
+}}%%
+erDiagram
+    Agency {
+        int id PK
+        string name
+        string subdomain
+        decimal management_fee_percentage
+        string bank_account_name
+        string bank_account_number
+        string bank_sort_code
+    }
+    User {
+        int id PK
+        int agency_id FK
+        string name
+        string email
+        string role
+        string password_hash
+    }
+    Landlord {
+        int id PK
+        int agency_id FK
+        string first_name
+        string last_name
+        string email
+        string phone
+        string bank_account_name
+        string bank_account_number
+        string bank_sort_code
+        string payout_preference
+    }
+    Property {
+        int id PK
+        int agency_id FK
+        int landlord_id FK
+        string address_line_1
+        string address_line_2
+        string city
+        string postcode
+        string status
+    }
+    Tenant {
+        int id PK
+        int agency_id FK
+        string first_name
+        string last_name
+        string email
+        string phone
+        decimal credit_balance
+    }
+    Tenancy {
+        int id PK
+        int agency_id FK
+        int property_id FK
+        decimal rent_amount
+        string payment_frequency
+        int due_day
+        date start_date
+        date end_date
+        string status
+    }
+    Invoice {
+        int id PK
+        int agency_id FK
+        int property_id FK
+        string type
+        decimal amount
+        string description
+        string contractor_name
+        string status
+        decimal remaining_balance
+    }
+    Transaction {
+        int id PK
+        int agency_id FK
+        int property_id FK
+        int tenancy_id FK
+        int landlord_id FK
+        int tenant_id FK
+        int invoice_id FK
+        string transaction_type
+        decimal amount
+        string direction
+        string status
+        string source
+        string reference
+    }
+    Payout {
+        int id PK
+        int agency_id FK
+        int property_id FK
+        int landlord_id FK
+        int service_provider_id FK
+        int rent_allocation_id FK
+        string payment_type
+        string recipient_name
+        decimal amount
+        string status
+    }
+    Maintenance {
+        int id PK
+        int agency_id FK
+        int property_id FK
+        int reporter_id FK
+        string issue_description
+        string status
+        decimal cost
+    }
+
+    Agency ||--o{ User : "contains"
+    Agency ||--o{ Landlord : "registers"
+    Agency ||--o{ Property : "administers"
+    Agency ||--o{ Tenant : "manages"
+    Agency ||--o{ Tenancy : "contracts"
+    Agency ||--o{ Transaction : "records"
+    
+    Landlord ||--o{ Property : "owns"
+    Property ||--o{ Tenancy : "leases"
+    Tenancy ||--o{ Tenant : "associates"
+    
+    Property ||--o{ Maintenance : "reports"
+    Property ||--o{ Invoice : "accumulates"
+    
+    Tenancy ||--o{ Transaction : "accrues"
+    Invoice ||--o{ Transaction : "references"
+    Transaction ||--o{ Payout : "triggers"
+```
+
+---
+
+### 6. Database Schema Mindmap
+This mindmap organizes the tables into clear logical modules (SaaS administration, core entities, double-entry financial ledger, and operational workflows) to map the database landscape.
+
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#064e3b',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#34d399',
+    'lineColor': '#10b981',
+    'secondaryColor': '#0f172a',
+    'tertiaryColor': '#1e293b'
+  }
+}}%%
+mindmap
+  root((PropFlow DB Schema))
+    SaaS & User Layer
+      Agency
+      User
+      UserPermission
+    Core Entities
+      Landlord
+      Property
+      Tenant
+      Tenancy
+    Financials & Ledger
+      Invoice
+      InvoiceLine
+      Transaction (Single Source of Truth)
+      RentPaymentPlan
+      LandlordAdvance
+      Payout
+    Operations & Comms
+      ServiceProvider
+      Maintenance
+      BankEntry
+      CommunicationConfig
+      CommunicationMessage
+      CommunicationAttachment
+      MagicLinkToken
+      DocumentTemplate
+      EmailTemplate
+      EmailCampaign
+```
+
+---
+
 ## 🛠️ The Business Problem & Use Cases
 
 Property management is traditionally slow, paperwork-heavy, and error-prone. PropFlow AI automates these operations:
